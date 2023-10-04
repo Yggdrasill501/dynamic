@@ -26,7 +26,7 @@ int smallestValue(int *array, unsigned int size) {
 int main() {
     int size_of_array = 0;
     int *array;
-    std::srand(time(nullptr);
+    std::srand(time(nullptr));
 
     std::cout << "Enter a size of the array: ";
     std::cin >> size_of_array;
