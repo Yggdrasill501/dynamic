@@ -26,17 +26,19 @@ int smallestValue(int *array, unsigned int size) {
 int main() {
     int size_of_array = 0;
     int *array;
+    std::srand(time(nullptr);
 
     std::cout << "Enter a size of the array: ";
     std::cin >> size_of_array;
 
-    array = new int[size_of_array];
+    array = new(std::nothrow) int[size_of_array];
 
     fillArray(array, size_of_array);
     printArray(array, size_of_array);
 
     std::cout <<"Smallest value in array is: " << smallestValue(array, size_of_array) <<std::endl;
-    delete[] array;
+
+    array = nullptr;
 
     return 0;
 }
