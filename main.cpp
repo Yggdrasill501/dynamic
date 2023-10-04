@@ -8,19 +8,19 @@ void fillArray(int *array, unsigned int size) {
 }
 
 void printArray(int *array, unsigned int size) {
-    for (int i = 0; i < size; i++) {
+    for (unsigned int i = 0; i < size; i++) {
         std::cout << array[i] << " ";
     }
 }
 
-void smallestValue(int *array, unsigned int size) {
-    int smallest = array[0];
-    for (int i = 0; i < size; i++) {
-        if (array[i] < smallest) {
-            smallest = array[i];
+int smallestValue(int *array, unsigned int size) {
+    int min = array[0];
+    for (unsigned int i = 0; i < size; i++) {
+        if (array[i] < min) {
+            min = array[i];
         }
     }
-    std::cout << "The smallest value is: " << smallest << std::endl;
+    return min;
 }
 
 int main() {
