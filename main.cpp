@@ -1,26 +1,39 @@
 #include <iostream>
+#include <cstdlib>
 
-void sizeOfArray(int n) {
-    int *arr = new int[n];
+void array_of_random_numbers(int size) {
+    int array[size];
 
-    for (int i = 0; i < n; i++) {
-//        arr[i] = ;  add random variable
+    for (int i = 0; i < size; i++) {
+        array[i] = rand() % 100;
     }
 
-    for (int i = 0; i < n; i++) {
-        std::cout << arr[i] << " ";
+    for (int i = 0; i < size; i++) {
+        std::cout << array[i] << " ";
+    }
+}
+
+void smallest_value(int array[], int size) {
+    int smallest = array[0];
+
+    for (int i = 0; i < size; i++) {
+        if (array[i] < smallest) {
+            smallest = array[i];
+        }
     }
 
-    delete [] arr;
+    std::cout << "The smallest value is: " << smallest << std::endl;
 }
 
 int main() {
-    int N;
+    int size_of_array = 0;
 
     std::cout << "Enter a size of the array: ";
-    std::cin >> N;
+    std::cin >> size_of_array;
 
-    sizeOfArray(N);
+    array_of_random_numbers(size_of_array);
+
+    smallest_value()
 
     return 0;
 }
